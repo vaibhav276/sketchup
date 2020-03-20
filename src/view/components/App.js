@@ -12,9 +12,9 @@ import CompilerFactory from '../../compilers/compilerFactory';
 
 export default class App extends Component {
   state = {
-    text: 'Hello world',
+    text: '# Hello world',
     html: '',
-    inputFormat: 'plain-text',
+    inputFormat: 'gh-markdown',
     outputFormat: 'html'
   };
 
@@ -23,6 +23,10 @@ export default class App extends Component {
   constructor() {
     super();
     this.compilerFactory = new CompilerFactory();
+  }
+
+  componentDidMount() {
+    this.onCompile(this.state.text);
   }
 
   onCompile = (text) => {
