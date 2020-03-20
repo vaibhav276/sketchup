@@ -79,7 +79,9 @@ export default class Editor extends Component {
         return (
             <Container textAlign='right'>
               <p />
-              <Button as='div' labelPosition='left'>
+              <Button as='div' labelPosition='left'
+                      onClick={this.props.onInputFormatClick}
+              >
                 <Label as='a' basic>
                   Input format
                 </Label>
