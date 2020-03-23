@@ -1,3 +1,5 @@
+import React from 'react';
+import { Container } from 'semantic-ui-react';
 import Marked from 'marked';
 
 export default class GhMarkdownToHtmlCompiler {
@@ -11,6 +13,6 @@ export default class GhMarkdownToHtmlCompiler {
     }
 
     compile(text) {
-        return Marked(text);
+        return <Container dangerouslySetInnerHTML={{ __html: Marked(text) }} />
     }
 }

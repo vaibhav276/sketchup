@@ -15,7 +15,7 @@ import CompilerFactory from '../../compilers/compilerFactory';
 export default class App extends Component {
   state = {
     text: '# Hello world',
-    html: '',
+    jsx: undefined,
     options: {
       inputFormat: 'gh-markdown',
       inputFormatOptions: [{
@@ -49,12 +49,11 @@ export default class App extends Component {
 
   onCompile = (text) => {
     const compiler = this.compilerFactory.lookupCompiler(
-      this.state.options.inputFormat,
-      this.state.options.outputFormat
+      this.state.options.inputFormat
     );
-    const html = compiler.compile(text);
+    const jsx = compiler.compile(text);
     this.setState({
-      html: html
+      jsx: jsx
     });
   };
 
@@ -118,7 +117,7 @@ export default class App extends Component {
           </Grid.Column>
           <Grid.Column>
             <Render
-              html = {this.state.html}
+              jsx = {this.state.jsx}
               outputFormat = {this.state.options.outputFormat}
             />
           </Grid.Column>

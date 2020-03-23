@@ -1,15 +1,15 @@
-import PlainTextToHtmlCompiler from './plainTextToHtmlCompiler';
-import GhMarkdownToHtmlCompiler from './ghMarkdownToHtmlCompiler';
+import PlainTextToJsxCompiler from './plainTextToJsxCompiler';
+import GhMarkdownToJsxCompiler from './ghMarkdownToJsxCompiler';
 
 export default class CompilerFactory {
-    lookupCompiler(inputFormat, outputFormat) {
+    lookupCompiler(inputFormat) {
         switch(inputFormat) {
            case 'plain-text':
-                return new PlainTextToHtmlCompiler();
+                return new PlainTextToJsxCompiler();
            case 'gh-markdown':
-                return new GhMarkdownToHtmlCompiler();
+                return new GhMarkdownToJsxCompiler();
            default:
-                return new PlainTextToHtmlCompiler();
+                return new PlainTextToJsxCompiler();
         }
     }
 }

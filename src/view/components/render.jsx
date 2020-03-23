@@ -21,7 +21,7 @@ export default class Render extends Component {
                </Button>
                <p />
              </Container>
-             <Container dangerouslySetInnerHTML={{ __html: this.props.html }} />
+             {this.props.jsx}
            </div>
        );
     }
