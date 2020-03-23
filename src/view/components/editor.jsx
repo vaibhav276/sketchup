@@ -7,7 +7,7 @@ import {
     Button
 } from 'semantic-ui-react';
 import AceEditor from 'react-ace';
-import "ace-builds/src-noconflict/mode-yaml";
+import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/theme-eclipse";
 
 export default class Editor extends Component {
@@ -95,7 +95,7 @@ export default class Editor extends Component {
               />
               <p />
               <AceEditor
-                mode="yaml"
+                mode="java"
                 theme="eclipse"
                 onChange={this.onChange}
                 name="editor"

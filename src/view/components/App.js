@@ -14,10 +14,10 @@ import CompilerFactory from '../../compilers/compilerFactory';
 
 export default class App extends Component {
   state = {
-    text: '# Hello world',
+    text: '{"boxes": [{"at": [20,10]}, {"at": [100,45]}]}',
     jsx: undefined,
     options: {
-      inputFormat: 'gh-markdown',
+      inputFormat: 'graph-text',
       inputFormatOptions: [{
         key: 'gh-markdown',
         text: 'Github flavor markdown',
@@ -26,6 +26,10 @@ export default class App extends Component {
         key: 'plain-text',
         text: 'Plain text',
         value: 'plain-text'
+      }, {
+        key: 'graph-text',
+        text: 'Graph text',
+        value: 'graph-text'
       }],
       outputFormat: 'html',
     },
